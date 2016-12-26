@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="design.css"/>
+	<link rel="stylesheet" href="stopwatchdesign.css"/>
+	<link rel="stylesheet" href="global.css"/>
+	<script src="logic.js"></script>
+	<script src="stopwatch.js"></script>
+</head>
+	
+<body onload="ss()">
+	<audio loop autoplay>
+		<source src="Sound_Tracks/bg.wav" type="audio/mpeg"/>
+	</audio>
+	<div class="header">HANGMAN</div>
+	<div class="leftcon">
+		<div class="scoreboard"><div id="exactscore">20</div>More to win</div>
+		<a href=""><img src="Images/playagain.png" class="playagain"/></a>
+		<br/><div class="hiddentext">Play Again!</div>
+	</div>
+	<div class="container">
+		<img id="image" src="Images/1.png"/>
+		<div id="hint">
+			<strong>Guess the Word</strong><br/>
+			<p id="explanation">Fictional Character</p>
+		</div>
+		<div id="word"><script>document.getElementById('word').innerHTML=dash.join(" ");</script></div>
+		<div class="empty"></div>
+		<div class="keypad">
+			<form name="buttons">
+			<input type="button" name="A" value="A" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="B" value="B" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="C" value="C" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="D" value="D" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="E" value="E" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="F" value="F" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="G" value="G" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="H" value="H" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="I" value="I" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="J" value="J" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="K" value="K" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="L" value="L" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="M" value="M" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="N" value="N" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="O" value="O" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="P" value="P" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="Q" value="Q" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="R" value="R" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="S" value="S" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="T" value="T" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="U" value="U" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="V" value="V" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="W" value="W" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="X" value="X" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="Y" value="Y" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="Z" value="Z" onclick="this.disabled=true;ls(this.name)"/>
+			</form>
+		</div>
+	</div>
+	<div class="rightcon">
+		<div class="chanceboard"><div id="exactchance">6</div><span id="chance" >Chances left</span></div>
+		<div id="hurryup">HURRY!</div>
+		<div id="clockcase">
+			<div id="clockdot"></div>
+			<div id="clock">--</div>
+		</div>
+		<a href="index.html"><img src="Images/quit.png" class="quit"/></a>
+		<br/><div class="hiddentext">Exit!</div>
+	</div>
+		<footer>
+			<div>&copy; Aurobindo Debnath</div>
+		</footer>
+</body>
+</html>

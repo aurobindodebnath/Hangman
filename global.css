@@ -1,0 +1,30 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+.header{
+	background-color: black;
+	font: bold normal 60px Verdana;
+	color: #b5a96a;
+	text-align: center;
+	letter-spacing: 20px;
+}
+
+footer{
+	background-image: linear-gradient(to bottom,silver,black 80%);
+	margin: 510px 0px 0px 0px;
+	height: 20px;
+	text-align: center;
+	color: white;
+	padding: 5px 10px;
+	display: block;
+}
+
+footer div{
+	width: 200px;
+	height: 0px;
+	margin: auto;
+	padding: 5px 0px;
+}

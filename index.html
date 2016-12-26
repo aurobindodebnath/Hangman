@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hangman</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="indexdesign.css"/>
+		<link rel="stylesheet" href="global.css"/>
+		<script src="logic.js"></script>
+	</head>
+	<body>
+		<div class="header">HANGMAN</div>
+		<div class="container">
+			<form name="player" method="post" action="hangman.html">
+				<span>Enter Name:</span>
+				<input class="playername" type="text" name="inputbox" value="Player" maxlength=10/>
+				<input type="submit" value="PLAY" onclick="valid()"/>
+			</form>
+		</div>
+		<footer>
+			<div>&copy; Aurobindo Debnath</div>
+		</footer>
+	</body>
+</html>
