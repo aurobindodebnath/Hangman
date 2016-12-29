@@ -1,0 +1,262 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+.bigdaddy{
+	width:1366px;
+}
+
+.header{
+	background-color: #1a171b;
+	border-bottom: 1px solid #204256;
+	font: bold normal 60px Verdana;
+	color: #d6c87e;
+	text-align: center;
+	letter-spacing: 20px;
+}
+#dead {
+    height: 252px;
+    position: absolute;
+    width: 618px;
+    border: 30px solid;
+    border-radius: 50px;
+    font: bold normal 218px Verdana;
+    margin: 104px 100px 0px 332px;
+    color:#b31010;
+    transform: rotate(-15deg);
+	visibility:hidden;
+}
+footer{
+	background-color:#1a171b;
+	margin: 510px 0px 0px 0px;
+	height: 20px;
+	text-align: center;
+	color: #d6c87e;
+	padding: 5px 10px;
+	border-top: 1px solid #204256;
+}
+
+footer div{
+	width: 200px;
+	height: 0px;
+	margin: auto;
+	padding: 5px 0px;
+}
+
+body{
+    background-image: linear-gradient(to bottom, #29292b,#517586);
+	background-attachment: fixed;
+}
+
+.leftcon{
+	float: left;
+	width: 170px;
+	height: 450px;
+}
+.rightcon{
+	float: right;
+	width: 170px;
+	height: 450px;
+}
+.scoreboard{
+	margin: 26px 20px 0px 20px;
+	height: 110px;
+	width: 110px;
+	background-color: silver;
+	border-radius: 5px;
+	float: left;
+	padding: 10px 10px;
+	font: bold normal 20px Verdana;
+	text-align: center;
+}
+
+#exactscore{
+	height: 50px;
+	width: 50px;
+	margin: 10px auto;
+	background-color: silver;
+	font: bold normal 40px Verdana;
+	color: red;
+}
+
+#playerphoto{
+    height: 128px;
+    width: 128px;
+    border: 1px solid black;
+    margin: 36px auto 0px 20px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    opacity: 0.8;
+
+}
+#playername{
+    border: 1px solid black;
+    margin: 0px 20px 0px 20px;
+    background-color: black;
+    color: silver;
+    text-align: center;
+    font: bold normal 18px Verdana;
+    border-radius: 5px;
+}
+
+
+.playagain{
+	margin: 27px auto 0px 50px;
+	height: 70px;
+	width: 70px;
+	border: 1px ridge silver;
+	border-radius: 45px;
+	opacity: 0.6;
+}
+
+.playagain:hover{
+	background-color: #6776b9;
+	opacity: 1;
+	transform:scale(1.1);
+	
+}
+
+.quit{
+	margin: 36px auto 0px 50px;
+	height: 70px;
+	width: 70px;
+	border: 1px ridge silver;
+	border-radius: 45px;
+	opacity: 0.6;
+}
+
+.quit:hover{
+	background-color: #e62b0a;
+	opacity: 1.0;
+	transform:scale(1.1);
+}
+.chanceboard{
+	margin: 50px 20px;
+	height: 110px;
+	width: 110px;
+	background-color: silver;
+	border-radius: 5px;
+	float: left;
+	padding: 10px 10px;
+	font: bold normal 20px Verdana;
+	text-align: center;
+	
+}
+#exactchance{
+	height: 50px;
+	width: 50px;
+	margin: 10px 28px;
+	background-color: silver;
+	font: bold normal 40px Verdana;
+	color: red;
+}
+#exactchance:hover, #exactscore:hover{
+	transform:scale(1.4);
+	color: brown;
+}
+.container{
+	border: 1px solid black;
+	width: 1000px;
+	height: 450px;
+	margin: 31px auto;
+	background-image: url(../Images/bg.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+	float:left;
+}
+
+#hint{
+	border: 1px solid black;
+	width: 491px;
+	height: 87px;
+	margin: 50px 70px 10px 27px;
+	float: left;
+    border-radius: 5px;  
+	background-image: linear-gradient(to bottom, #6b6666, black);
+	padding: 25px 25px 0px 25px;
+	color: #dec956;
+}
+#noofhints{
+    margin: -18px 0px 0px 387px;
+    background-color: #e62b0a;
+    width: 121px;
+    border-radius: 20px;
+    color: #e7f35b;
+    font: bold italic 17px Verdana;
+    text-align: center;
+}
+
+#hintbutton{
+	height: 19px;
+    width: 60px;
+    margin: 15px 3px;
+    background-color: #444f65;
+    border: 2px inset grey;
+	border-radius:2px;
+    color: #e7f35b;
+    text-align: center;
+    padding: 4px;
+    font: bold normal 16px Arial;
+    visibility: visible;
+    position: absolute;
+	float:left;
+}
+#hintbutton:hover{
+	color: white;
+	transform:scale(1.1);
+	border-color: grey;
+}
+#hinttext{
+    height: 50px;
+    width: 470px;
+    margin: 5px 0px;
+    visibility: hidden; 
+	color: white;
+}
+
+#word{
+	border: 1px solid black;
+	width: 540px;
+	height: 50px;
+	margin: 37px 10px 15px 29px;
+	float: left;
+	border-radius: 5px;
+    background-image: linear-gradient(to bottom,#6b6666,black);
+	text-align: center;
+	font: bold normal 35px Verdana;
+    color: #ded764;
+}
+.empty{
+	clear: both;
+}
+.keypad{
+	border: 1px solid black;
+	background-image: linear-gradient(to bottom, #6b6666,black);
+	width: 898px;
+	margin: -10px auto;
+	height: 100px;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px 10px;
+}
+input{
+	padding: 5px 5px;
+	margin: 5px 0px;
+	height: 42px;
+	width: 45px;
+	font-family: Verdana;
+	font-weight: bold;
+}
+input:hover{
+	background-color:#578aa2;
+	transform:scale(1.1);
+}
+.buttontext{
+	text-align: center;
+	color: white;
+	font: bold italic 20px Verdana;
+}

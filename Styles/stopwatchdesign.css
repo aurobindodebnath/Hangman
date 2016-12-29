@@ -1,0 +1,53 @@
+@-webkit-keyframes spinnow{
+	100%{
+		transform: rotate(-360deg);
+	}
+}
+@-webkit-keyframes negspin{
+	100%{
+		transform: rotate(360deg);
+	}
+}
+
+#clockcase{
+    border: 1px solid black;
+    margin: 225px auto 0px auto;
+    height: 100px;
+    width: 100px;
+    border-radius: 55px;
+    background-image: linear-gradient(to bottom, #ebffae,#dee25e);
+    animation: 60s spinnow infinite linear;
+	position:relative;
+	border: 5px double silver;
+}
+
+#clockdot{
+    height: 5px;
+    width: 5px;
+    border-radius: 3px;
+    background-color: black;
+    position: absolute;
+    margin: 4px 47px;
+}
+
+#clock{
+	margin: 20px;
+	height: 40px;
+	width: 60px;
+	font: bold normal 40px Verdana;
+	text-align: center;
+	animation: 60s negspin infinite linear;
+	padding:10px 0px;
+}
+
+#hurryup{
+	text-align: center;
+    width: 129px;
+    height: 33px;
+    margin: -29px 20px auto 10px;
+    float: right;
+    font: bold normal 25px Balker;
+	letter-spacing: 2px;
+    color: #ffc86f;
+	visibility: hidden;
+}
