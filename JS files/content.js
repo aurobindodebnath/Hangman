@@ -2,7 +2,7 @@
 var hintsleft=7;
 
 //To change the clock time, just change the value of this variable
-var settime=1000;
+var settime=60;
 
 //This Array contains all the words
 var allwords= new Array('SUPERMAN','BATMAN', 'SPIDERMAN', 'IRONMAN', 'JOKER','CATWOMAN','WOLVERINE','THOR','WONDERWOMAN','AQUAMAN','HERCULES','HULK','FLASH','DEADPOOL',
