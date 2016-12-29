@@ -1,23 +1,50 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Hangman</title>
-		<meta charset="utf-8"/>
-		<link rel="stylesheet" href="indexdesign.css"/>
-		<link rel="stylesheet" href="global.css"/>
-		<script src="logic.js"></script>
-	</head>
-	<body>
-		<div class="header">HANGMAN</div>
-		<div class="container">
-			<form name="player" method="post" action="hangman.html">
-				<span>Enter Name:</span>
-				<input class="playername" type="text" name="inputbox" value="Player" maxlength=10/>
-				<input type="submit" value="PLAY" onclick="valid()"/>
-			</form>
-		</div>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="Styles/indexdesign.css"/>
+	<script src="JS files/index.js"></script>
+	<script src="JS files/audiocontrols.js"></script>	
+</head>
+<body onload="f()">
+	
+	<audio loop autoplay>
+		<source src="Sound_Tracks/bg.wav" type="audio/mpeg"/>
+	</audio>
+	<audio id="hover">
+		<source src="Sound_Tracks/hover.ogg" type="audio/mpeg"/>
+	</audio>
+	
+	<div class="indexheader">
+	<div class="box">
+	<div class="dis" id="H">H</div>
+	<div class="dis" id="A">A</div>
+	<div class="dis" id="N">N</div>
+	<div class="dis" id="G">G</div>
+	<div class="dis" id="M">M</div>
+	<div class="dis" id="A2">A</div>
+	<div class="dis" id="N2">N</div>
+	</div>
+		<div class="empty"></div>
+		<div id="line"></div>
+	</div>
+	<div class="sidemenu">
+	<a href="hangman.html"><div id="newgame" onMouseOver="playhover()">New Game</div></a>
+	<div id="quitgame" onMouseOver="playhover()" onclick="window.close()">Quit</div>
+	</div>
+	<article>
+	<div id="rulesheet">
+		<h1>RULES</h1>
+		<p>A very good friend of yours is about to be Hanged. But you can save him!<br/>How?<br/>
+			You will be given a hidden word. Only the number of letters will be visible. The word is the name of a fictional character! All you need to do is to guess the word correctly within time.<br/>
+			You need to guess all the words to save your friend from getting hanged. You can take limited hints in the whole game.
+			For each word, you get 6 chances of guessing a wrong letter.
+		</p>
+		<p>Good Luck!</p></div>
+	</article>
+	<div class="empty"></div>
 		<footer>
 			<div>&copy; Aurobindo Debnath</div>
 		</footer>
-	</body>
+</body>
 </html>

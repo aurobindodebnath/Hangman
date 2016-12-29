@@ -1,76 +1,122 @@
 <!DOCTYPE html>
 <html>
+	
 <head>
 	<title>Hangman</title>
 	<meta charset="utf-8"/>
-	<link rel="stylesheet" href="design.css"/>
-	<link rel="stylesheet" href="stopwatchdesign.css"/>
-	<link rel="stylesheet" href="global.css"/>
-	<script src="logic.js"></script>
-	<script src="stopwatch.js"></script>
+	<link rel="stylesheet" href="Styles/design.css"/>	
+	<link rel="stylesheet" href="Styles/stopwatchdesign.css"/>
+	<link rel="stylesheet" href="Styles/man_animate.css"/>
+	<script src="JS files/content.js"></script>
+	<script src="JS files/logic.js"></script>
+	<script src="JS files/man.js"></script>
+	<script src="JS files/stopwatch.js"></script>
+	<script src="JS files/hint.js"></script>
+	<script src="JS files/audiocontrols.js"></script>
 </head>
 	
-<body onload="ss()">
-	<audio loop autoplay>
-		<source src="Sound_Tracks/bg.wav" type="audio/mpeg"/>
-	</audio>
+<body onload="player(),shownoofhints(),selectword(),starttimer()">
+	
+	
+	<audio id="ticktok"><source src="Sound_Tracks/ticktok.wav" type="audio/mpeg"/></audio>
+	<audio id="correct"><source src="Sound_Tracks/correctletter.wav" type="audio/mpeg"/></audio>
+	<audio id="wrong"><source src="Sound_Tracks/wrong_answer.wav" type="audio/mpeg"/></audio>
+	<audio id="hover"><source src="Sound_Tracks/hover.ogg" type="audio/mpeg"/></audio>
+	<audio id="youwon"><source src="Sound_Tracks/you_won.wav" type="audio/mpeg"/></audio>
+	
+	
+	<div class="bigdaddy">
+		
 	<div class="header">HANGMAN</div>
+		
+		
 	<div class="leftcon">
-		<div class="scoreboard"><div id="exactscore">20</div>More to win</div>
-		<a href=""><img src="Images/playagain.png" class="playagain"/></a>
-		<br/><div class="hiddentext">Play Again!</div>
+		<img src="Images/player.jpg" id="playerphoto"/>
+		<div id="playername">--</div>
+		<div class="scoreboard"><div id="exactscore">--</div>More to win</div>
+		<a href=""><img onMouseOver="playhover()" src="Images/playagain.png" class="playagain"/></a>
+		<br/><div class="buttontext">Play Again!</div>
 	</div>
+		
+		
 	<div class="container">
-		<img id="image" src="Images/1.png"/>
-		<div id="hint">
-			<strong>Guess the Word</strong><br/>
-			<p id="explanation">Fictional Character</p>
+		<div id="image">
+			<div id="pole"></div>
+			<div id="rod"></div>
+			<div id="rope"></div>
+			<div id="manbox">
+				<div id="head"><div id="eye1"></div><div id="eye2"></div></div>
+				  <div id="hand1"></div>
+				  <div id="body"></div>
+				  <div id="hand2"></div>
+				  <div id="leg1"></div>
+				  <div id="leg2"></div>
+		  </div>
 		</div>
-		<div id="word"><script>document.getElementById('word').innerHTML=dash.join(" ");</script></div>
+		
+		<div id="hint">
+			<div id="noofhints">--</div>
+			<strong>Guess the Fictional Character</strong>
+			<div id="hintbutton" onMouseOver="playhover()" onclick="givehint()">Hint</div>
+			<div id="hinttext"></div>
+		</div>
+		
+		<div id="word"></div>
+		
 		<div class="empty"></div>
+		
 		<div class="keypad">
 			<form name="buttons">
-			<input type="button" name="A" value="A" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="B" value="B" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="C" value="C" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="D" value="D" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="E" value="E" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="F" value="F" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="G" value="G" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="H" value="H" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="I" value="I" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="J" value="J" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="K" value="K" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="L" value="L" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="M" value="M" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="N" value="N" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="O" value="O" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="P" value="P" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="Q" value="Q" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="R" value="R" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="S" value="S" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="T" value="T" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="U" value="U" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="V" value="V" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="W" value="W" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="X" value="X" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="Y" value="Y" onclick="this.disabled=true;ls(this.name)"/>
-			<input type="button" name="Z" value="Z" onclick="this.disabled=true;ls(this.name)"/>
+			<input type="button" name="A" value="A" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="B" value="B" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="C" value="C" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="D" value="D" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="E" value="E" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="F" value="F" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="G" value="G" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="H" value="H" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="I" value="I" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="J" value="J" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="K" value="K" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="L" value="L" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="M" value="M" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="N" value="N" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="O" value="O" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="P" value="P" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="Q" value="Q" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="R" value="R" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="S" value="S" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="T" value="T" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="U" value="U" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="V" value="V" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="W" value="W" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="X" value="X" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="Y" value="Y" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
+			<input type="button" name="Z" value="Z" onMouseOver="playhover()" onclick="this.disabled=true;main(this.name)"/>
 			</form>
 		</div>
 	</div>
+		
+		
 	<div class="rightcon">
 		<div class="chanceboard"><div id="exactchance">6</div><span id="chance" >Chances left</span></div>
+		
 		<div id="hurryup">HURRY!</div>
+		
 		<div id="clockcase">
 			<div id="clockdot"></div>
 			<div id="clock">--</div>
 		</div>
-		<a href="index.html"><img src="Images/quit.png" class="quit"/></a>
-		<br/><div class="hiddentext">Exit!</div>
+		
+		<a href="index.html"><img onMouseOver="playhover()" src="Images/quit.png" class="quit"/></a>
+		<br/><div class="buttontext">Exit!</div>
 	</div>
+		
+	<div id="dead">DEAD</div>
 		<footer>
 			<div>&copy; Aurobindo Debnath</div>
 		</footer>
+		
+	</div>
 </body>
 </html>
